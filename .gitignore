@@ -5,3 +5,6 @@
 
 #maven files
 target/
+
+#project-specific files
+log.out
