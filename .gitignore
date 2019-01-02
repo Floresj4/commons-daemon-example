@@ -8,3 +8,9 @@ target/
 
 #project-specific files
 log.out
+DaemonLoggingExample.*
+
+#using extresources temporarily to test
+src/extresources/*.jar
+src/extresources/dependency/
+src/extresources/prunsrv.exe

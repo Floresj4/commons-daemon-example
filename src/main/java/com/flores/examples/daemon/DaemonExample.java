@@ -12,15 +12,15 @@ import org.slf4j.LoggerFactory;
  */
 public class DaemonExample {
 	
+	static {
+		PropertyConfigurator.configure("log4j.properties");
+	}
+
 	private static final Logger logger = LoggerFactory.getLogger(DaemonExample.class);
 	
 	static boolean isLogging = false;
 	
 	public static void main(String[] args) {
-		PropertyConfigurator.configure("./src/extresources/log4j.properties");
-		
-//		logSomething();
-		start(args);
 	}
 	
 	static void logSomething(UUID guid) {
@@ -28,7 +28,7 @@ public class DaemonExample {
 				guid.toString()));
 	}
 	
-	static void start(String args[]) {
+	public static void start(String args[]) {
 		while(isLogging = true) {
 			UUID guid = UUID.randomUUID();
 			logSomething(guid);
@@ -44,7 +44,8 @@ public class DaemonExample {
 		}
 	}
 	
-	static void stop(String args[]) {
+	public static void stop(String args[]) {
+		logger.debug("Terminating process...");
 		isLogging = false;
 		System.exit(0);
 	}

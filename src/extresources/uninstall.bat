@@ -1,0 +1,1 @@
+prunsrv delete DaemonLoggingExample
